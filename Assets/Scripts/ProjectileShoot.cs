@@ -10,6 +10,9 @@ public class ProjectileShoot : MonoBehaviour
 
     private int counter = 0;
 
+    float yet;
+    const float interval = 5.0f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,7 +28,16 @@ public class ProjectileShoot : MonoBehaviour
         {
             
             counter = 0; // reset the counter variable to 0
+        }
+
+        yet += Time.deltaTime;
+
+        if (yet >= interval)
+        {
+            yet -= interval;
+
             Instantiate(projectilePrefab, shootingPoint.position, transform.rotation);
+
         }
 
 
