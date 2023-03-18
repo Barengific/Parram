@@ -11,7 +11,7 @@ public class ProjectileShoot : MonoBehaviour
     private int counter = 0;
 
     float yet;
-    const float interval = 5.0f;
+    const float interval = 2.0f;
 
     // Start is called before the first frame update
     void Start()
