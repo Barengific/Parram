@@ -116,14 +116,14 @@ Library: lib_burst_generated
 --compilation-defines=ENABLE_INPUT_SYSTEM
 --compilation-defines=ENABLE_LEGACY_INPUT_MANAGER
 --compilation-defines=TEXTCORE_FONT_ENGINE_1_5_OR_NEWER
---compilation-defines=VISUAL_SCRIPTING_ENABLED
---compilation-defines=CSHARP_7_OR_LATER
---compilation-defines=CSHARP_7_3_OR_NEWER
 --compilation-defines=PACKAGE_PHYSICS
 --compilation-defines=PACKAGE_PHYSICS2D
 --compilation-defines=PACKAGE_TILEMAP
 --compilation-defines=PACKAGE_ANIMATION
 --compilation-defines=PACKAGE_UITOOLKIT
+--compilation-defines=CSHARP_7_OR_LATER
+--compilation-defines=CSHARP_7_3_OR_NEWER
+--compilation-defines=VISUAL_SCRIPTING_ENABLED
 --compilation-defines=PACKAGE_INPUT_SYSTEM_EXISTS
 --compilation-defines=PACKAGE_INPUT_SYSTEM_1_2_0_OR_NEWER_EXISTS
 --compilation-defines=MODULE_AI_EXISTS
@@ -142,8 +142,8 @@ Library: lib_burst_generated
 --generate-link-xml=Temp\burst.link.xml
 --debug=Full
 --output=C:\Users\Admin\Documents\GitHub\Parram\Temp\StagingArea\tempburstlibs\armeabi-v7a\lib_burst_generated
---root-assembly=C:\Users\Admin\Documents\GitHub\Parram\Temp\StagingArea\Data\Managed\Unity.AdaptivePerformance.dll
 --root-assembly=C:\Users\Admin\Documents\GitHub\Parram\Temp\StagingArea\Data\Managed\UnityEngine.UI.dll
+--root-assembly=C:\Users\Admin\Documents\GitHub\Parram\Temp\StagingArea\Data\Managed\Unity.AdaptivePerformance.dll
 --root-assembly=C:\Users\Admin\Documents\GitHub\Parram\Temp\StagingArea\Data\Managed\Unity.VisualScripting.Flow.dll
 --root-assembly=C:\Users\Admin\Documents\GitHub\Parram\Temp\StagingArea\Data\Managed\Unity.Mathematics.dll
 --root-assembly=C:\Users\Admin\Documents\GitHub\Parram\Temp\StagingArea\Data\Managed\Unity.InputSystem.dll
@@ -154,6 +154,7 @@ Library: lib_burst_generated
 --root-assembly=C:\Users\Admin\Documents\GitHub\Parram\Temp\StagingArea\Data\Managed\Unity.TextMeshPro.dll
 --root-assembly=C:\Users\Admin\Documents\GitHub\Parram\Temp\StagingArea\Data\Managed\Unity.Timeline.dll
 --root-assembly=C:\Users\Admin\Documents\GitHub\Parram\Temp\StagingArea\Data\Managed\Unity.Notifications.Android.dll
+--root-assembly=C:\Users\Admin\Documents\GitHub\Parram\Temp\StagingArea\Data\Managed\Assembly-CSharp.dll
 --root-assembly=C:\Users\Admin\Documents\GitHub\Parram\Temp\StagingArea\Data\Managed\Unity.2D.SpriteShape.Runtime.dll
 --root-assembly=C:\Users\Admin\Documents\GitHub\Parram\Temp\StagingArea\Data\Managed\Unity.2D.PixelPerfect.dll
 --root-assembly=C:\Users\Admin\Documents\GitHub\Parram\Temp\StagingArea\Data\Managed\Unity.AdaptivePerformance.Samsung.Android.dll
@@ -162,7 +163,6 @@ Library: lib_burst_generated
 --root-assembly=C:\Users\Admin\Documents\GitHub\Parram\Temp\StagingArea\Data\Managed\Unity.2D.Tilemap.Extras.dll
 --root-assembly=C:\Users\Admin\Documents\GitHub\Parram\Temp\StagingArea\Data\Managed\Unity.Profiling.Core.dll
 --root-assembly=C:\Users\Admin\Documents\GitHub\Parram\Temp\StagingArea\Data\Managed\Unity.InternalAPIEngineBridge.001.dll
---root-assembly=C:\Users\Admin\Documents\GitHub\Parram\Temp\StagingArea\Data\Managed\Assembly-CSharp.dll
 --root-assembly=C:\Users\Admin\Documents\GitHub\Parram\Temp\StagingArea\Data\Managed\Unity.Subsystem.Registration.dll
 --assembly-folder=C:\Users\Admin\Documents\GitHub\Parram\Temp\StagingArea\Data\Managed\
 --pdb-search-paths=Temp/ManagedSymbols/
