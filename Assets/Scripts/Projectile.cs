@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class Projectile : MonoBehaviour
 {
@@ -27,5 +29,16 @@ public class Projectile : MonoBehaviour
     void OnBecameInvisible()
     {
         Destroy(gameObject);
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        // Check if the collided object has the tag "Player"
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            // Do something when the collision happens
+            Debug.Log("Collision detected!");
+            SceneManager.LoadScene("MenuScene");
+        }
     }
 }
