@@ -31,14 +31,14 @@ public class Projectile : MonoBehaviour
         Destroy(gameObject);
     }
 
-    void OnCollisionEnter(Collision collision)
-    {
-        // Check if the collided object has the tag "Player"
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            // Do something when the collision happens
-            Debug.Log("Collision detected!");
-            SceneManager.LoadScene("MenuScene");
-        }
-    }
+    //void OnCollisionEnter(Collision collision)
+    //{
+    //    // Check if the collided object has the tag "Player"
+    //    if (collision.gameObject.CompareTag("Player"))
+    //    {
+    //        // Do something when the collision happens
+    //        Debug.Log("Collision detected!");
+    //        SceneManager.LoadScene("MenuScene");
+    //    }
+    //}
 }
