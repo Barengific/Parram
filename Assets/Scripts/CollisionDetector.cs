@@ -15,17 +15,20 @@ public class CollisionDetector : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
     void OnTriggerEnter(Collider cube)
     {
+        Debug.Log("Collision detected!");
+        SceneManager.LoadScene("MenuScene");
         Destroy(cube.gameObject);
         print("Another object has entered the trigger");
-        Debug.Log("Collision detected!");
+
     }
 
     //void OnCollisionEnter(Collision collision)
     //{
+    //    Debug.Log("Collision detected!");
     //    // Check if the collided object has the tag "Player"
     //    if (collision.gameObject.CompareTag("Player"))
     //    {
