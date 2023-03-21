@@ -45,7 +45,7 @@ public class Timer : MonoBehaviour
 
             // Increment the score and update the text
             score++;
-            scoreText.text = "Score: " + score.ToString();
+            scoreText.text = score.ToString();
         }
     }
 
