@@ -14,6 +14,7 @@ public class CollisionDetector : MonoBehaviour
     {
         Debug.Log("Collision detected!");
 
+        //point setter
         if (PlayerPrefs.HasKey("Score"))
         {
             int scoreCarried = PlayerPrefs.GetInt("Score");
@@ -24,6 +25,30 @@ public class CollisionDetector : MonoBehaviour
             Debug.Log("Non Existing Key");
             PlayerPrefs.SetInt("Score", int.Parse(scoreText.text));
         }
+
+        //highscore setter
+        if (PlayerPrefs.HasKey("HighScore"))
+        {
+            int currentHighScore = PlayerPrefs.GetInt("HighScore");
+            int newHighScore = int.Parse(scoreText.text);
+
+            if (newHighScore > currentHighScore)
+            {
+                PlayerPrefs.SetInt("HighScore", newHighScore);
+            }
+            else
+            {
+                PlayerPrefs.SetInt("HighScore", currentHighScore);
+            }
+            
+        }
+        else
+        {
+            PlayerPrefs.SetInt("HighScore", int.Parse(scoreText.text));
+        }
+
+
+
 
         Destroy(collision.gameObject);
         SceneManager.LoadScene("MenuScene");
