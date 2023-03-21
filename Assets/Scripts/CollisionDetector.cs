@@ -2,39 +2,31 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 
 public class CollisionDetector : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
+    public TextMeshProUGUI scoreText;
 
-    }
-    void OnTriggerEnter(Collider cube)
+    void OnCollisionEnter2D(Collision2D collision)
     {
         Debug.Log("Collision detected!");
+
+        if (PlayerPrefs.HasKey("Score"))
+        {
+            int scoreCarried = PlayerPrefs.GetInt("Score");
+            PlayerPrefs.SetInt("Score", int.Parse(scoreText.text) + scoreCarried);
+        }
+        else
+        {
+            Debug.Log("Non Existing Key");
+            PlayerPrefs.SetInt("Score", int.Parse(scoreText.text));
+        }
+
+        Destroy(collision.gameObject);
         SceneManager.LoadScene("MenuScene");
-        Destroy(cube.gameObject);
-        print("Another object has entered the trigger");
 
     }
-
-    //void OnCollisionEnter(Collision collision)
-    //{
-    //    Debug.Log("Collision detected!");
-    //    // Check if the collided object has the tag "Player"
-    //    if (collision.gameObject.CompareTag("Player"))
-    //    {
-    //        // Do something when the collision happens
-    //        Debug.Log("Collision detected!");
-    //        SceneManager.LoadScene("MenuScene");
-    //    }
-    //}
 }
