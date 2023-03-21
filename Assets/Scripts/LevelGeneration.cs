@@ -16,6 +16,7 @@ public class LevelGeneration : MonoBehaviour
         StartPlane1.transform.position = new Vector3(0, 7, 0);
         StartPlane1.AddComponent<BoxCollider2D>();
 
+
         GameObject StartPlane2 = Instantiate(StartTile, transform);
         StartPlane2.transform.position = new Vector3(0, -1, 0);
         StartPlane2.AddComponent<BoxCollider2D>();
