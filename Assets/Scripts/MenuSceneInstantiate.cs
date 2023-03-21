@@ -10,9 +10,11 @@ public class MenuSceneInstantiate : MonoBehaviour
     private int highscoreCarried = 0;
 
     public TextMeshProUGUI scoreReal;
+    public TextMeshProUGUI highscoreReal;
 
     void Start()
     {
+        //points
         if (PlayerPrefs.HasKey("Score"))
         {
             scoreCarried = PlayerPrefs.GetInt("Score");
@@ -23,7 +25,19 @@ public class MenuSceneInstantiate : MonoBehaviour
             scoreCarried = 0;
         }
 
-        Debug.Log("!!!!!: " + scoreReal.text + " 111111111");
+        //highscore
+        if (PlayerPrefs.HasKey("HighScore"))
+        {
+            int score = PlayerPrefs.GetInt("HighScore");
+            string scoreStr = score.ToString();
+            highscoreReal.text = scoreStr;
+        }
+        else
+        {
+            int score = 0;
+            string scoreStr = score.ToString();
+            highscoreReal.text = scoreStr;
+        }
 
         int tempScoreInt = scoreCarried + int.Parse(scoreReal.text);
         string tempScoreStr = tempScoreInt.ToString();
