@@ -358,6 +358,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreReal: {fileID: 226134937}
+  highscoreReal: {fileID: 589108791}
 --- !u!1 &314198475
 GameObject:
   m_ObjectHideFlags: 0
