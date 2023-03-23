@@ -11,5 +11,6 @@ public class ItemObject : ScriptableObject
     public Sprite icon;
     public int time;
     public int value;
+    public string direction;
 
 }
