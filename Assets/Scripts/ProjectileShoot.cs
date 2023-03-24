@@ -5,13 +5,22 @@ using UnityEngine;
 public class ProjectileShoot : MonoBehaviour
 {
 
-    public Transform shootingPoint;
+    public Transform shootingPointUp;
+    public Transform shootingPointDown;
+    public Transform shootingPointRight;
+    public Transform shootingPointLeft;
+
     public GameObject projectilePrefab;
 
     private int counter = 0;
 
-    float yet;
-    const float interval = 2.0f;
+    float yet1;
+    float yet2;
+    float yet3;
+    float yet4;
+
+
+    const float interval = 5.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -22,25 +31,68 @@ public class ProjectileShoot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        ProjectileBasicUp();
+        ProjectileBasicDown();
+        ProjectileBasicRight();
+        ProjectileBasicLeft();
 
-        counter++;
-        if (counter == 1000)
+    }
+
+    void ProjectileBasicUp()
+    {
+
+        yet1 += Time.deltaTime;
+
+        if (yet1 >= interval)
         {
-            
-            counter = 0; // reset the counter variable to 0
+            yet1 -= interval;
+
+            Instantiate(projectilePrefab, shootingPointUp.position, shootingPointUp.transform.rotation);
+
         }
 
-        yet += Time.deltaTime;
+    }
 
-        if (yet >= interval)
+    void ProjectileBasicDown()
+    {
+        yet2 += Time.deltaTime;
+
+        if (yet2 >= interval)
         {
-            yet -= interval;
+            yet2 -= interval;
 
-            Instantiate(projectilePrefab, shootingPoint.position, transform.rotation);
+            Instantiate(projectilePrefab, shootingPointDown.position, shootingPointDown.transform.rotation);
 
         }
 
+    }
 
+    void ProjectileBasicRight()
+    {
+        yet3 += Time.deltaTime;
+
+        if (yet3 >= interval)
+        {
+            yet3 -= interval;
+
+            Instantiate(projectilePrefab, shootingPointRight.position, shootingPointRight.transform.rotation);
+
+        }
+
+    }
+
+
+    void ProjectileBasicLeft()
+    {
+        yet4 += Time.deltaTime;
+
+        if (yet4 >= interval)
+        {
+            yet4 -= interval;
+
+            Instantiate(projectilePrefab, shootingPointLeft.position, shootingPointLeft.transform.rotation);
+
+        }
 
     }
 }
