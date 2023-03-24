@@ -7,7 +7,20 @@ public class Timer : MonoBehaviour
 {
 
     public TextMeshProUGUI timerText;
-    private float totalPlayTime = 0.0f;
+    private float totalPlayTime;
+
+    //public float totalPlayTime
+    //{
+    //    get
+    //    {
+    //        return this.totalPlayTime;
+    //    }
+    //    set
+    //    {
+    //        // include any checks you want to take place in here before setting the value
+    //        totalPlayTime = value;
+    //    }
+    //}
 
     public TextMeshProUGUI scoreText;
     private int score = 0;
