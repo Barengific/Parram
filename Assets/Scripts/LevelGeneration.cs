@@ -8,38 +8,39 @@ public class LevelGeneration : MonoBehaviour
     public GameObject Tile2;
     public GameObject StartTile;
 
-    private float Index = 0;
+    float totalPlayTime;
+    float maxIntervalTime = 4f;
+    float timeSinceLastSpawn;
 
-    private void Start()
-    {
-        GameObject StartPlane1 = Instantiate(StartTile, transform);
-        StartPlane1.transform.position = new Vector2(0, 7);
-        StartPlane1.AddComponent<BoxCollider2D>();
-
-
-        GameObject StartPlane2 = Instantiate(StartTile, transform);
-        StartPlane2.transform.position = new Vector2(0, -1);
-        StartPlane2.AddComponent<BoxCollider2D>();
-
-        GameObject StartPlane3 = Instantiate(StartTile, transform);
-        StartPlane3.transform.position = new Vector2(0, -9);
-        StartPlane3.AddComponent<BoxCollider2D>();    
-
-        GameObject StartPlane4 = Instantiate(StartTile, transform);
-        StartPlane4.transform.position = new Vector2(0, -17);
-        StartPlane4.AddComponent<BoxCollider2D>();
-
-        GameObject StartPlane5 = Instantiate(StartTile, transform);
-        StartPlane5.transform.position = new Vector2(0, -25);
-        StartPlane5.AddComponent<BoxCollider2D>();
-
-    }
+    public float ObstacleVelocity = 2f;
 
     private void Update()
     {
-        gameObject.transform.position += new Vector3(0, 4 * Time.deltaTime, 0);
+        totalPlayTime += Time.deltaTime;
 
-        if (transform.position.y >= Index)
+        if (totalPlayTime > 10.0f)
+        {
+            maxIntervalTime = 4f;
+        }
+        if (totalPlayTime > 20.0f)
+        {
+            maxIntervalTime = 3f;
+        }
+        if (totalPlayTime > 30.0f)
+        {
+            maxIntervalTime = 2f;
+        }
+        if (totalPlayTime > 40.0f)
+        {
+            maxIntervalTime = 1f;
+        }
+        if (totalPlayTime > 50.0f)
+        {
+            maxIntervalTime = 0.5f;
+        }
+
+        timeSinceLastSpawn += Time.deltaTime;
+        if (timeSinceLastSpawn > maxIntervalTime)
         {
             int RandomInt1 = Random.Range(0, 2);
 
@@ -48,6 +49,8 @@ public class LevelGeneration : MonoBehaviour
                 int rndX = Random.Range(-5, 5);
                 GameObject TempTile1 = Instantiate(Tile1, transform);
                 TempTile1.AddComponent<BoxCollider2D>();
+                Rigidbody2D obstacleRigidbody = TempTile1.GetComponent<Rigidbody2D>();
+                obstacleRigidbody.velocity = new Vector2(0, ObstacleVelocity);
                 TempTile1.transform.position = new Vector2(rndX, -16);
             }
             else if (RandomInt1 == 0)
@@ -55,6 +58,8 @@ public class LevelGeneration : MonoBehaviour
                 int rndX = Random.Range(-5, 5);
                 GameObject TempTile1 = Instantiate(Tile2, transform);
                 TempTile1.AddComponent<BoxCollider2D>();
+                Rigidbody2D obstacleRigidbody = TempTile1.GetComponent<Rigidbody2D>();
+                obstacleRigidbody.velocity = new Vector2(0, ObstacleVelocity);
                 TempTile1.transform.position = new Vector2(rndX, -16);
             }
 
@@ -65,6 +70,8 @@ public class LevelGeneration : MonoBehaviour
                 int rndX = Random.Range(-5, 5);
                 GameObject TempTile2 = Instantiate(Tile1, transform);
                 TempTile2.AddComponent<BoxCollider2D>();
+                Rigidbody2D obstacleRigidbody = TempTile2.GetComponent<Rigidbody2D>();
+                obstacleRigidbody.velocity = new Vector2(0, ObstacleVelocity);
                 TempTile2.transform.position = new Vector2(rndX, -24);
             }
             else if (RandomInt2 == 0)
@@ -72,10 +79,12 @@ public class LevelGeneration : MonoBehaviour
                 int rndX = Random.Range(-5, 5);
                 GameObject TempTile2 = Instantiate(Tile2, transform);
                 TempTile2.AddComponent<BoxCollider2D>();
+                Rigidbody2D obstacleRigidbody = TempTile2.GetComponent<Rigidbody2D>();
+                obstacleRigidbody.velocity = new Vector2(0, ObstacleVelocity);
                 TempTile2.transform.position = new Vector2(rndX, -24);
             }
 
-            Index = Index + 15.95f;
+            timeSinceLastSpawn = 0f;
         }
     }
 }
